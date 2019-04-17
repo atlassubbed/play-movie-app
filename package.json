@@ -17,7 +17,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/atlassubbed/play-movie-app.git"
   },
   "keywords": [
     "tmdb",
@@ -65,5 +65,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-infinite": "^0.13.0"
-  }
+  },
+  "homepage": "https://github.com/atlassubbed/play-movie-app#readme",
+  "bugs": "https://github.com/atlassubbed/play-movie-app/issues"
 }
