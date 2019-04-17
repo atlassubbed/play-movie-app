@@ -23,6 +23,8 @@ I initially wanted to flesh this out to be more impressive. I ended up looking i
   2. `npm run dev` to start the web server and API server.
   3. Visit `localhost:3000` to see the React app.
 
+  You can also bundle the min/gzipped client into `dist/` with `npm run build`.
+
 ### tools
 
 I wrote a basic webpack 4 boilerplate generator last year. It supports minification, compression, content-hashed filenames, running dev servers, and testing client-side code. I'm using it here instead of `create-react-app`. I'm sure `create-react-app` is pretty straightforward, but vanilla webpack is probably sufficient for this project.
@@ -77,7 +79,7 @@ I wrote a basic webpack 4 boilerplate generator last year. It supports minificat
 
 #### windows
 
-Windows server support isn't tested right now. I'd imagine there might be potential hiccups due to using "..", `__dirname`, and/or `\n`, but we can cross that bridge later.
+Windows server support isn't tested right now. I'd imagine there might be potential hiccups due to using `".."`, `__dirname`, and/or `\n`, but we can cross that bridge later.
 
 #### web server
 
