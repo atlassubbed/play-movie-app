@@ -25,6 +25,10 @@ I initially wanted to flesh this out to be more impressive. I ended up looking i
 
   You can also bundle the min/gzipped client into `dist/` with `npm run build`.
 
+### using the app
+
+  You'll see a list of popular movies. You can find other movies by using the search bar! The list will automatically update to show you movies that match your search. Clicking on a movie will bring up details about the movie. Direct URLs to searches and movie details can be shared with your friends (assuming the app is being hosted publicly).
+
 ### tools
 
 I wrote a basic webpack 4 boilerplate generator last year. It supports minification, compression, content-hashed filenames, running dev servers, and testing client-side code. I'm using it here instead of `create-react-app`. I'm sure `create-react-app` is pretty straightforward, but vanilla webpack is probably sufficient for this project.
