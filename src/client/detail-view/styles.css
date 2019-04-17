@@ -1,0 +1,40 @@
+/* flexbox styles */
+.detail-container {
+  display: flex;
+  /* this is hacky, is there a better way? */
+  position: fixed;
+  left: 350px;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 2px 4px #999;
+          box-shadow: 0px 2px 4px #999;
+  overflow-y: scroll;
+  height: 500px;
+  width: 600px;
+}
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.movie-stats {
+  display: flex;
+}
+.tags {
+  justify-content: flex-end;
+}
+.movie-title {
+  display: flex;
+  flex-direction: column;
+}
+
+/* additional styles */
+.center {
+  text-align: center;
+}
+.movie-stat {
+  padding: 5px;
+  margin: 3px;
+}
+.tag {
+  background-color: #f99;
+}

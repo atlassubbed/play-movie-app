@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+}
+
+.app-container {
+  display: flex;
+}
+
+.search-container {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}

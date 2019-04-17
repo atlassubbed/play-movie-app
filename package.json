@@ -4,33 +4,48 @@
   "version": "1.0.0",
   "description": "A neat little app for searching movies, powered by TMDB's API.",
   "scripts": {
-    "test-server": "mocha-webpack --colors --watch --webpack-config webpack.dev.js --recursive './test/**/*.test.js' || true",
-    "test": "mocha-webpack --colors --webpack-config webpack.dev.js --recursive './test/**/*.test.js'",
+    "test-client": "mocha-webpack --colors --webpack-config webpack.dev.js --recursive './test/client'",
+    "test-server": "mocha --recursive './test/server'",
+    "test": "concurrently npm:test-*",
+    "dev-client": "webpack-dev-server --config webpack.dev.js --inline --hot --compress --progress",
+    "dev-server": "nodemon --watch src/server 'src/server/index.js'",
+    "dev": "concurrently npm:dev-*",
     "build": "webpack --config webpack.prod.js --display-modules",
-    "start": "npm run build && http-server ./dist -a localhost -p 3030 --gzip",
-    "dev-server": "webpack-dev-server --config webpack.dev.js --inline --hot --compress --progress"
+    "prod-client": "npm run build && http-server ./dist -a localhost -p 3000 --gzip -P http://localhost:8000",
+    "start": "concurrently npm:dev-server npm:prod-client"
   },
   "private": true,
   "repository": {
     "type": "git",
     "url": ""
   },
-  "keywords": [],
+  "keywords": [
+    "tmdb",
+    "movies",
+    "app",
+    "react",
+    "express",
+    "webpack"
+  ],
   "author": "atlassubbed <atlassubbed@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.19",
     "compression-webpack-plugin": "^1.1.11",
+    "concurrently": "^4.1.0",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.2.0",
     "mocha-webpack": "^2.0.0-beta.0",
+    "nodemon": "^1.18.11",
     "optimize-css-assets-webpack-plugin": "^4.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",
@@ -41,5 +56,14 @@
   "engines": {
     "node": "^10.1.0",
     "npm": "^6.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "moviedb": "^0.2.10",
+    "query-string": "^6.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-infinite": "^0.13.0"
   }
 }

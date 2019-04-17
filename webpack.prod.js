@@ -1,9 +1,9 @@
-const path = require("path")
+const { resolve } = require("path")
 const merge = require("webpack-merge")
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin")
 const UglifyCSSPlugin = require("optimize-css-assets-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
-const { config, src } = require("./webpack.common.js")
+const { config, src, rootDir } = require("./webpack.common.js")
 
 // split js bundle into 3 parts for better client caching:
 //   1. webpack4 runtime
@@ -21,17 +21,10 @@ module.exports = merge(config, {
     new UglifyCSSPlugin({}),
     new MiniCSSExtractPlugin({
       filename: "[contenthash].css"
-    })
+    }),
   ],
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        include: src,
-        use: {
-          loader: "babel-loader"
-        }
-      },
       {
         test: /\.css$/,
         include: src,
@@ -47,7 +40,7 @@ module.exports = merge(config, {
           chunks: "initial",
           name: "vendor",
           // can change to /react|p5|p5\/lib\/addons\/p5\.sound/, etc.
-          test: path.resolve(__dirname, "node_modules"),
+          test: resolve(rootDir, "node_modules"),
           enforce: true
         }
       }
