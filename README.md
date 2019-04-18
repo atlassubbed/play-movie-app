@@ -10,7 +10,7 @@ I initially wanted to flesh this out to be more impressive. I ended up looking i
 
 ### installation
 
-  Make sure you have git, Node.js and npm installed.
+  Make sure you have git, Node.js 10+ and npm installed.
 
   1. `git clone https://github.com/atlassubbed/play-movie-db` to download project.
   2. `cd play-movie-db` to get into the project root.
