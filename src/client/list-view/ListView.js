@@ -70,11 +70,12 @@ export default class ListView extends Component {
         infiniteLoadBeginEdgeOffset={250}
         // or we could use bind in constructor
         onInfiniteLoad={() => this._getMorePosts()}
-        isInfiniteLoading={this.state.isLoading}
+        isInfiniteLoading={isLoading}
+        loadingSpinnerDelegate={"loading..."}
         useWindowAsScrollContainer={true}
         elementHeight={100}
       >
-        {isLoading ? "loading..." : error || this._renderMovies(this.props.onClick)}
+        {error ? isLoading || error : this._renderMovies(this.props.onClick)}
       </Infinite>
     )
   }
