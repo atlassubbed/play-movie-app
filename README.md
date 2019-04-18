@@ -13,11 +13,12 @@ I initially wanted to flesh this out to be more impressive. I ended up looking i
   Make sure you have git, Node.js and npm installed.
 
   1. `git clone https://github.com/atlassubbed/play-movie-db` to download project.
+  2. `cd play-movie-db` to get into the project root.
   2. `npm install` to install all dependencies.
 
 ### running the app
 
-  Make sure you have a valid TMDB v3 API key.
+  Make sure you have a valid TMDB v3 API key and are in the project root.
 
   1. `export TMDB_API_KEY=<your_api_key>` 
   2. `npm run dev` to start the web server and API server.
